@@ -1,5 +1,5 @@
 
-     //添加节点。。。。
+     //添加节点。。。。。。
     const openBtn=document.getElementById("openBtn")
     const closeBtn=document.getElementById("closeBtn")
     const rules=document.getElementById("rules")
