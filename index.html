@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="target-densitydpi=320,width=640,user-scalable=no"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>2D打砖块小游戏</title>
-</head>
-<body>
-        <h1 id="title">2D小游戏-打砖块</h1>
-        <button id="openBtn" class="btn openRulesBtn">阅读规则</button>
-        <div id="rules"  class="rules" >
-            <h2>游戏指南：</h2>
-            <p>使用左右键移动挡板，尽可能接住掉落的球体； 球体被接住后，会弹到上方，打碎上面的砖块。</p>
-            <p>如果没有接到掉落的球体，那么您的分数会清零，所有砖块将会还原。</p>
-            <button id="closeBtn" class="btn colseRulesBtn">关闭</button>
-        </div>
-        <canvas id="canvas" height="600px" width="800px"></canvas>
-
-        <script src="script.js"></script>
-</body>
+  </head>
+  <body>
+    <div>
+      <h1 id="title">2D小游戏-打砖块</h1>
+      <button id="openBtn" class="btn openRulesBtn">阅读规则</button>
+      <div id="rules" class="rules">
+        <h2>游戏指南：</h2>
+        <p>
+          使用左右键移动挡板，尽可能接住掉落的球体；
+          球体被接住后，会弹到上方，打碎上面的砖块。
+        </p>
+        <p>如果没有接到掉落的球体，那么您的分数会清零，所有砖块将会还原。</p>
+        <button id="closeBtn" class="btn colseRulesBtn">关闭</button>
+      </div>
+      <canvas id="canvas" height="600px" width="800px"></canvas>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
