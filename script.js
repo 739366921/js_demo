@@ -11,7 +11,7 @@ let grade = 0; //分数变量
 let tempStart = 0;
 let tempEnd = 0;
 let tempChangeValue = 0;
-let slidingLongnew=0
+let slidingLongnew = 0;
 //行列
 const bricksRowCount = 9;
 const bricksColumnCount = 5;
@@ -236,23 +236,22 @@ function ontouchstsart(e) {
   tempStart = startPos;
   console.log(tempStart);
   console.log(plank.x);
-  
 }
 
 function ontouchmove(e) {
   let touch = e.touches[0];
   let endPos = touch.pageX;
-   tempEnd = endPos;
-   tempChangeValue = Math.abs(tempEnd) -Math.abs(tempStart);
-  let slidingLongold=Math.abs(tempChangeValue)
-  slidingLongChange=slidingLongnew-slidingLongold
-  if (tempChangeValue<0) {
+  tempEnd = endPos;
+  tempChangeValue = Math.abs(tempEnd) - Math.abs(tempStart);
+  let slidingLongold = Math.abs(tempChangeValue);
+  slidingLongChange = slidingLongnew - slidingLongold;
+  if (tempChangeValue < 0) {
     plank.x += slidingLongChange;
-  } else if (tempChangeValue>0) {
+  } else if (tempChangeValue > 0) {
     plank.x -= slidingLongChange;
   }
 
-  slidingLongnew=slidingLongold
+  slidingLongnew = slidingLongold;
   let a = new Array();
   a[0] = tempStart;
   a[1] = tempEnd;
@@ -263,8 +262,8 @@ function ontouchmove(e) {
 function ontouchend(e) {
   if (tempEnd) {
     plank.dx = 0;
-    tempChangeValue=0
-    slidingLongnew=0
+    tempChangeValue = 0;
+    slidingLongnew = 0;
   }
 }
 
@@ -273,7 +272,7 @@ function ontouchend(e) {
 document.addEventListener("keydown", keydown);
 document.addEventListener("keyup", keyup);
 document.addEventListener("touchstart", ontouchstsart);
-document.addEventListener("touchmove", ontouchmove);
+document.addEventListener("touchmove", ontouchmove,{ passive: false });
 document.addEventListener("touchend", ontouchend);
 
 openBtn.addEventListener("click", () => {
