@@ -1,79 +1,95 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background-color: #5cce9b;
-    font-family: Arial, Helvetica, sans-serif;
-    min-width: 100vw;
-    min-height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #5cce9b;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
 }
 
-h1{
-    color: #fff;
-    font-size: 45px;
+
+
+h1 {
+  color: #fff;
+  font-size: 45px;
+  text-align: center;
 }
 
-canvas{
-    background-color: #fff;
-    display: block;
-    border-radius: 10px;
+#canvas {
+  background-color: #fff;
+  display: block;
+  border-radius: 10px;
 }
 
-.btn{
-    cursor: pointer;
-    border: 0;
-    padding: 10px 20px;
-    background-color: black;
-    color: #fff;
-    border-radius: 6px;
-    font-size: medium;
+#canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn:focus{
-    outline: 0;
+#container{
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
-.btn:hover{
-    background-color:#444444;
+.btn {
+  cursor: pointer;
+  border: 0;
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  font-size: medium;
 }
 
-.btn:active{
-    transform: scale(0.98);
+.btn:focus {
+  outline: 0;
 }
 
-.openRulesBtn{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    margin: 30px;
+.btn:hover {
+  background-color: #444444;
 }
 
-.rules{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color:rgba(51, 51, 51, 1) ;
-    color: #fff;
-    min-height: 100vh;
-    line-height: 1.5;
-    padding: 20px;
-    width: 400px;
-    transform:translateX(-400px);
-    transition:transform 1s ease-in-out;
-
+.btn:active {
+  transform: scale(0.98);
 }
 
-.rules.show{
-    transform: translateX(0px);
+.openRulesBtn {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 30px;
 }
 
-p{
-    margin: 20px;
-    font-size: large;
+.rules {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(51, 51, 51, 1);
+  color: #fff;
+  min-height: 100vh;
+  line-height: 1.5;
+  padding: 20px;
+  width: 400px;
+  transform: translateX(-400px);
+  transition: transform 1s ease-in-out;
+}
+
+.rules.show {
+  transform: translateX(0px);
+}
+
+p {
+  margin: 20px;
+  font-size: large;
 }

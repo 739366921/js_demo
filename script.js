@@ -8,6 +8,11 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 let grade = 0; //分数变量
+let tempStart = 0;
+let tempEnd = 0;
+let tempChangeValue = 0;
+let slidingLongnew=0
+//行列
 const bricksRowCount = 9;
 const bricksColumnCount = 5;
 
@@ -223,10 +228,53 @@ function keyup(e) {
   }
 }
 
+//触摸屏滑动事件
+
+function ontouchstsart(e) {
+  let touch = e.touches[0];
+  let startPos = touch.pageX;
+  tempStart = startPos;
+  console.log(tempStart);
+  console.log(plank.x);
+  
+}
+
+function ontouchmove(e) {
+  let touch = e.touches[0];
+  let endPos = touch.pageX;
+   tempEnd = endPos;
+   tempChangeValue = Math.abs(tempEnd) -Math.abs(tempStart);
+  let slidingLongold=Math.abs(tempChangeValue)
+  slidingLongChange=slidingLongnew-slidingLongold
+  if (tempChangeValue<0) {
+    plank.x += slidingLongChange;
+  } else if (tempChangeValue>0) {
+    plank.x -= slidingLongChange;
+  }
+
+  slidingLongnew=slidingLongold
+  let a = new Array();
+  a[0] = tempStart;
+  a[1] = tempEnd;
+  a[2] = slidingLongChange;
+  console.log(a);
+}
+
+function ontouchend(e) {
+  if (tempEnd) {
+    plank.dx = 0;
+    tempChangeValue=0
+    slidingLongnew=0
+  }
+}
+
 //事件监听
 
 document.addEventListener("keydown", keydown);
 document.addEventListener("keyup", keyup);
+document.addEventListener("touchstart", ontouchstsart);
+document.addEventListener("touchmove", ontouchmove);
+document.addEventListener("touchend", ontouchend);
 
 openBtn.addEventListener("click", () => {
   rules.classList.add("show");
