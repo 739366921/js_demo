@@ -239,6 +239,7 @@ function ontouchstsart(e) {
 }
 
 function ontouchmove(e) {
+  e.preventDefault();
   let touch = e.touches[0];
   let endPos = touch.pageX;
   tempEnd = endPos;
@@ -250,13 +251,14 @@ function ontouchmove(e) {
   } else if (tempChangeValue > 0) {
     plank.x -= slidingLongChange;
   }
-
+  //记录新值
   slidingLongnew = slidingLongold;
   let a = new Array();
   a[0] = tempStart;
   a[1] = tempEnd;
   a[2] = slidingLongChange;
   console.log(a);
+  return false;
 }
 
 function ontouchend(e) {
@@ -272,8 +274,9 @@ function ontouchend(e) {
 document.addEventListener("keydown", keydown);
 document.addEventListener("keyup", keyup);
 document.addEventListener("touchstart", ontouchstsart);
-document.addEventListener("touchmove", ontouchmove,{ passive: false });
+document.addEventListener("touchmove", ontouchmove, { passive: false });
 document.addEventListener("touchend", ontouchend);
+// document.onselectstart = function(){return false;};
 
 openBtn.addEventListener("click", () => {
   rules.classList.add("show");
