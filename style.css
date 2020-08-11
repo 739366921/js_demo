@@ -55,17 +55,16 @@ h1 {
   font-size: medium;
 }
 
+/* outline设置边框 */
 .btn:focus {
   outline: 0;
 }
+
 
 .btn:hover {
   background-color: #444444;
 }
 
-.btn:active {
-  transform: scale(0.98);
-}
 
 .openRulesBtn {
   position: absolute;
@@ -96,3 +95,14 @@ p {
   margin: 20px;
   font-size: large;
 }
+
+footer>p{
+  margin: 0px;
+}
+
+footer{
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+}
+

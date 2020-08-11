@@ -52,7 +52,7 @@ const bricks = [];
 for (let i = 0; i < bricksRowCount; i++) {
   bricks[i] = [];
   for (let j = 0; j < bricksColumnCount; j++) {
-    const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX; //因为每个方法都有padding不用两边都有，否则中间会多一倍
+    const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX; //因为每个方块都有padding不用两边都有，否则中间会多一倍
     const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY;
     bricks[i][j] = { x, y, ...brickInfo }; //{}里面填写的是数组中每个元素的信息
     // '...'扩展运算符ES6 用于展开对象和数组信息，不能用于多重嵌套得对象和数组
